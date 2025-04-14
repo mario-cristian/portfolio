@@ -22,88 +22,86 @@ class Hackathon {
   }
 }
 
-var imageExists = true;
+var hackathonsArea, hackathonCard;
 
 function displayHackathons() {
-  let hackathonContainer = $($($(".hackathons")[1])[0])
-    .children()
-    .eq(0);
-
   for (let i = 0; i < hackathons.length; i++) {
-    if (i > 0) {
-      let aux = hackathonContainer.children().eq(0).clone();
-      hackathonContainer.append(aux);
-    }
+    let aux = hackathonCard.clone();
 
-    let item = hackathonContainer.children().eq(i);
-
-    let id = "#collapseHackathon" + i;
-    let btn = item.children().eq(0).children().eq(0);
-
-    btn.attr("data-bs-target", id);
-    btn.attr("aria-controls", id.slice(1));
-
-    btn.html(
-      hackathons[i].shortDescription +
-        "<span class='badge ms-3' style='background-color: " +
-        hackathons[i].category.color +
-        "'>" +
-        hackathons[i].category.name +
-        "</span>"
-    );
-
-    item.children().eq(1).attr("id", id.slice(1));
-
-    let card = item.children().eq(1).children().eq(0).children().eq(0);
-
-    let image = card.children().eq(0);
-    image.attr(
-      "src",
-      "hackathons/" + hackathons[i].name.toLowerCase() + ".png"
-    );
-
-    let title = card.children().eq(1).children().eq(0);
-    title.html("<b>" + hackathons[i].title + "</b>");
-
-    let description = card.children().eq(1).children().eq(2);
-    description.text(hackathons[i].description);
-
-    let technologiesWrapper = card.children().eq(2).children().eq(0);
-    let technologyBadge = technologiesWrapper.children().eq(0).clone();
-    technologiesWrapper.empty();
-
+    aux.attr("id", "hackathon" + hackathons[i].name);
+    aux.children().eq(1).children().eq(0).text(hackathons[i].category.name);
+    aux
+      .children()
+      .eq(1)
+      .children()
+      .eq(0)
+      .css("background-color", hackathons[i].category.color);
+    aux
+      .children()
+      .eq(0)
+      .attr("src", "hackathons/" + hackathons[i].name.toLowerCase() + ".png");
+    aux.children().eq(1).children().eq(1).text(hackathons[i].title);
     for (let j = 0; j < hackathons[i].technologies.length; j++) {
-      let aux = technologyBadge.clone();
+      let technologyAux = aux
+        .children()
+        .eq(1)
+        .children()
+        .eq(3)
+        .children()
+        .eq(0)
+        .clone();
+      technologyAux.text(hackathons[i].technologies[j].name);
+      technologyAux.css(
+        "background-color",
+        hackathons[i].technologies[j].color
+      );
+      technologyAux.attr("hidden", false);
 
-      aux.text(hackathons[i].technologies[j].name);
-      aux.css("background-color", hackathons[i].technologies[j].color);
-
-      technologiesWrapper.append(aux);
+      aux.children().eq(1).children().eq(3).append(technologyAux);
     }
-
-    let locationAndDate = card.children().eq(2).children().eq(1);
-    locationAndDate.text(
-      hackathons[i].name +
-        ", " +
-        hackathons[i].location +
-        ", " +
-        hackathons[i].date
-    );
-
-    let githubBtn = card.children().eq(3).children().eq(0).clone();
-    let githubContainer = card.children().eq(3);
-    githubContainer.empty();
-
+    aux.children().eq(1).children().eq(5).text(hackathons[i].description);
+    aux
+      .children()
+      .eq(1)
+      .children()
+      .eq(6)
+      .children()
+      .eq(0)
+      .text(hackathons[i].location + ", " + hackathons[i].date);
     for (let j = 0; j < hackathons[i].github.length; j++) {
-      let aux = githubBtn.clone();
+      let btn;
+      if (j == 0) {
+        btn =
+          "<a href='" + hackathons[i].github[j][1] + "' target='_blank'><button class='btn' style='color: #ffffff; background-color: #474747'>" +
+          hackathons[i].github[j][0] +
+          "</button></a>";
+      } else {
+        btn =
+          "<a href='" + hackathons[i].github[j][1] + "' target='_blank'><button class='btn ms-3' style='color: #ffffff; background-color: #474747'>" +
+          hackathons[i].github[j][0] +
+          "</button></a>";
+      }
 
-      aux.attr("href", hackathons[i].github[j][1]);
-      aux.children().eq(0).text(hackathons[i].github[j][0]);
-
-      githubContainer.append(aux);
+      $(btn).insertBefore(
+        aux
+          .children()
+          .eq(1)
+          .children()
+          .eq(6 + j)
+      );
     }
+    aux.attr("hidden", false);
+
+    hackathonsArea.append(aux);
   }
 }
+
+$(document).ready(function () {
+  hackathonsArea = $("#hackathonsArea");
+  hackathonCard = $("#hackathonCard");
+
+  displayHackathons();
+});
 
 const hackathons = [
   new Hackathon(

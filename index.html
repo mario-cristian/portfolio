@@ -28,594 +28,531 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css"
       rel="stylesheet"
     />
-    <script src="index.js"></script>
     <script src="category.js"></script>
     <script src="project.js"></script>
     <script src="hackathon.js"></script>
+    <script src="index.js"></script>
     <title>Portfolio</title>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row mt-5">
-        <div class="col d-flex flex-column align-items-center">
-          <p class="lead" style="margin: 0">Constantinescu Mario-Cristian</p>
-          <p class="lead" style="font-size: 16px">
-            Machine Learning passionate
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col d-flex justify-content-center" style="gap: 24px">
-          <div class="d-flex align-items-center" style="gap: 12px">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              class="bi bi-envelope"
-              viewBox="0 0 16 16"
-              style="cursor: pointer"
-              onclick="showEmail()"
-            >
-              <path
-                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
-              />
-            </svg>
-          </div>
-          <div class="d-flex align-items-center" style="gap: 12px">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              class="bi bi-telephone"
-              viewBox="0 0 16 16"
-              style="cursor: pointer"
-              onclick="showPhoneNumber()"
-            >
-              <path
-                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
-              />
-            </svg>
-          </div>
-          <div class="d-flex align-items-center" style="gap: 12px">
-            <a
-              href="https://www.linkedin.com/in/mario-cristian-constantinescu-a97475245/"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                class="bi bi-linkedin"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
+    <div class="container-fluid w-100" id="mainArea">
+      <div class="row w-100 mt-3" style="height: auto">
         <div
-          class="col d-flex justify-content-center flex-wrap"
-          style="gap: 24px"
+          class="header col w-100 d-flex align-items-center flex-wrap ms-3"
+          style="padding: 0; gap: 24px"
         >
-          <button class="button" onclick="switchOption(event)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-check"
-              viewBox="0 0 16 16"
+          <div class="d-flex flex-column align-items-center">
+            <p class="lead" style="margin: 0">Constantinescu Mario-Cristian</p>
+            <p class="lead" style="font-size: 16px; margin: 0">
+              Machine Learning passionate
+            </p>
+            <div
+              class="col d-flex justify-content-center mt-1"
+              style="gap: 24px"
             >
-              <path
-                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-              />
-            </svg>
-            About me
-          </button>
-          <button class="button" onclick="switchOption(event)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-check"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-              />
-            </svg>
-            Education
-          </button>
-          <button class="button active-button" onclick="switchOption(event)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-check"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-              />
-            </svg>
-            Projects
-          </button>
-          <button class="button" onclick="switchOption(event)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-check"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-              />
-            </svg>
-            Hackathons
-          </button>
-          <button class="button" onclick="switchOption(event)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-check"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-              />
-            </svg>
-            CV
-          </button>
-        </div>
-      </div>
-      <div class="row mt-5 d-none about-me">
-        <div class="col d-flex ms-5"><h1 class="display-6">About</h1></div>
-      </div>
-      <div class="row mt-3 d-none about-me">
-        <div class="col d-flex flex-wrap ms-5" style="gap: 64px">
-          <div class="d-flex flex-column justify-content-start">
-            <p class="lead"><b>Age</b></p>
-            <div>
-              <div class="lead">22</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <p class="lead"><b>Job status</b></p>
-            <div>
-              <div class="lead">Looking for a job</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <p class="lead"><b>Phone</b></p>
-            <div>
-              <div class="lead">+40729665059</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <p class="lead"><b>Email</b></p>
-            <div>
-              <div class="lead">constantinescu.mario_06_05@yahoo.com</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5 d-none about-me">
-        <div class="col d-flex ms-5">
-          <h1 class="display-6">Languages spoken</h1>
-        </div>
-      </div>
-      <div class="row mt-3 d-none about-me">
-        <div class="col d-flex flex-wrap ms-5" style="gap: 24px">
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Romanian</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Native</h6>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">English</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">B2</h6>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Spanish</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">A2</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5 d-none about-me">
-        <div class="col d-flex ms-5">
-          <h1 class="display-6">Technologies</h1>
-        </div>
-      </div>
-      <div class="row mt-3 d-none about-me">
-        <div class="col d-flex flex-wrap ms-5" style="gap: 64px">
-          <div class="d-flex flex-column justify-content-start">
-            <p class="lead"><b>Machine learning</b></p>
-            <div>
-              <div class="lead">Natural Language Processing</div>
-              <div class="lead">Transformers</div>
-              <div class="lead">PyTorch</div>
-              <div class="lead">Scikit-learn</div>
-              <div class="lead">Imblearn</div>
-              <div class="lead">Keras</div>
-              <div class="lead">Tensorflow</div>
-              <div class="lead">Artificial Neural Networks</div>
-              <div class="lead">Convolutional Neural Networks</div>
-              <div class="lead">MediaPipe</div>
-              <div class="lead">Face recognition</div>
-              <div class="lead">Gestures recognition</div>
-              <div class="lead">Clustering</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Web Development (Frontend)</b></div>
-            <div class="mt-3">
-              <div class="lead">Angular</div>
-              <div class="lead">Web Sockets</div>
-              <div class="lead">Bootstrap</div>
-              <div class="lead">jQuery</div>
-              <div class="lead">AJAX</div>
-              <div class="lead">Streamlit</div>
-              <div class="lead">Three JS</div>
-              <div class="lead">Chart JS</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Web Development (Backend)</b></div>
-            <div class="mt-3">
-              <div class="lead">ASP.NET</div>
-              <div class="lead">Entity Framework</div>
-              <div class="lead">Dapper</div>
-              <div class="lead">Django</div>
-              <div class="lead">Flask</div>
-              <div class="lead">Web Sockets</div>
-              <div class="lead">Postman</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Databases (SQL)</b></div>
-            <div class="mt-3">
-              <div class="lead">SQL Live Server</div>
-              <div class="lead">PostgreSQL</div>
-              <div class="lead">Oracle</div>
-              <div class="lead">MySQL</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Databases (NoSQL)</b></div>
-            <div class="mt-3">
-              <div class="lead">MongoDB</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Containerization</b></div>
-            <div class="mt-3">
-              <div class="lead">Docker</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Virtual and Augmented Reality</b></div>
-            <div class="mt-3">
-              <div class="lead">GoDot</div>
-            </div>
-          </div>
-          <div class="d-flex flex-column justify-content-start">
-            <div class="lead"><b>Others</b></div>
-            <div class="mt-3">
-              <div class="lead">C/C++</div>
-              <div class="lead">Java</div>
-              <div class="lead">Arduino</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5 d-none education">
-        <div class="col d-flex ms-5"><h1 class="display-6">Education</h1></div>
-      </div>
-      <div class="row mt-3 d-none education">
-        <div class="col d-flex flex-wrap ms-5" style="gap: 24px">
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">High School</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">2017-2021</h6>
-              <div class="card-text">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <strong>Field of study</strong>: Mathematics and Computer
-                    Science
-                  </li>
-                  <li class="list-group-item">
-                    <strong>School</strong>: Liceul Teoretic "Carmen Sylva"
-                  </li>
-                  <li class="list-group-item">
-                    <strong>City</strong>: Eforie Sud, Constanta, Romania
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Final grade</strong>: 9.01
-                  </li>
-                </ul>
+              <div class="d-flex align-items-center" style="gap: 12px">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-envelope"
+                  viewBox="0 0 16 16"
+                  style="cursor: pointer"
+                  onclick="showEmail()"
+                >
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                  />
+                </svg>
+              </div>
+              <div class="d-flex align-items-center" style="gap: 12px">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-telephone"
+                  viewBox="0 0 16 16"
+                  style="cursor: pointer"
+                  onclick="showPhoneNumber()"
+                >
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                  />
+                </svg>
+              </div>
+              <div class="d-flex align-items-center" style="gap: 12px">
+                <a
+                  href="https://www.linkedin.com/in/mario-cristian-constantinescu-a97475245/"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="bi bi-linkedin"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Bachelor's Degree</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">2021-2024</h6>
-              <div class="card-text">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <strong>Field of study</strong>: Computer Science
-                  </li>
-                  <li class="list-group-item">
-                    <strong>School</strong>: Facultatea de matematica si
-                    informatica, Universitatea Ovidius
-                  </li>
-                  <li class="list-group-item">
-                    <strong>City</strong>: Constanta, Romania
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Final grade</strong>: 9.87
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Master's Degree</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">
-                2024-2026 (in progress)
-              </h6>
-              <div class="card-text">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <strong>Field of study</strong>: Cyber Security and Machine
-                    Learning (in English)
-                  </li>
-                  <li class="list-group-item">
-                    <strong>School</strong>: Facultatea de matematica si
-                    informatica, Universitatea Ovidius
-                  </li>
-                  <li class="list-group-item">
-                    <strong>City</strong>: Constanta, Romania
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div class="d-flex" style="gap: 16px">
+            <p
+              class="lead fw-bold"
+              onclick="changePage(event)"
+              id="projectsTab"
+            >
+              Projects
+            </p>
+            <p
+              class="lead c-pointer"
+              onclick="changePage(event)"
+              id="educationTab"
+            >
+              Education
+            </p>
+            <p
+              class="lead c-pointer"
+              onclick="changePage(event)"
+              id="hackathonsTab"
+            >
+              Hackathons
+            </p>
+            <p class="lead c-pointer" onclick="changePage(event)" id="CVTab">
+              CV
+            </p>
           </div>
         </div>
       </div>
-      <div class="row mt-5 projects">
-        <div
-          class="col d-flex flex-column align-items-start project-category ms-5"
-          id="projectsWrapper"
-        >
-          <div
-            class="lead collapsed"
-            data-bs-toggle="collapse"
-            href="#interactiveProjects"
-            role="button"
-            aria-expanded="false"
-            aria-controls="interactiveProjects"
-            id="projectCategory"
-            onclick="expandCategory(event)"
-          >
-            <b style="cursor: pointer">Interactive</b>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-caret-down-fill"
-              viewBox="0 0 16 16"
+      <div class="row w-100 ms-1 mt-3" id="projectsPage">
+        <div class="col w-100">
+          <div class="categories-area" id="categoriesArea">
+            <p class="category-tag lead mt-3" id="categoryTag" hidden>
+              Machine Learning
+            </p>
+            <div
+              class="category-projects-area d-none flex-wrap justify-content-between"
+              id="categoryProjectsArea"
             >
-              <path
-                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-caret-up-fill"
-              viewBox="0 0 16 16"
-              hidden
-            >
-              <path
-                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"
-              />
-            </svg>
-          </div>
-          <div class="collapse w-100 mt-3" id="projectCategoryWrapper">
-            <div class="accordion">
               <div
-                class="accordion-item mt-3"
-                style="border: 1px solid #d8d8d8; border-radius: 5px"
+                class="card project-card"
+                id="projectCard"
+                style="width: 18rem; height: 210px"
                 hidden
               >
-                <h2 class="accordion-header">
+                <div class="card-body d-flex align-items-center">
+                  <h5 class="card-title text-center w-100">
+                    Large Language Model (LLM) from scratch
+                  </h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item technologies">
+                    <span class="badge" hidden></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5" id="educationPage" hidden>
+        <div
+          class="col w-100 d-flex justify-content-around flex-wrap"
+          style="gap: 24px"
+        >
+          <div class="d-flex flex-column align-items-center" style="gap: 24px">
+            <p class="lead" style="margin: 0">Education</p>
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" style="margin: 0">Master's Degree</h5>
+                <p class="lead" style="font-size: 16px; margin: 0">
+                  2024-2026 (in progress)
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <b>Specialization:</b> Cyber Security and Machine Learning (in
+                  English)
+                </li>
+                <li class="list-group-item">
+                  <b>Institution:</b> Facultatea de Matematica si Informatica,
+                  Universitatea Ovidius
+                </li>
+                <li class="list-group-item"><b>City:</b> Constanta</li>
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" style="margin: 0">Bachelor's Degree</h5>
+                <p class="lead" style="font-size: 16px; margin: 0">2021-2024</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <b>Specialization:</b> Computer Science
+                </li>
+                <li class="list-group-item">
+                  <b>Institution:</b> Facultatea de Matematica si Informatica,
+                  Universitatea Ovidius
+                </li>
+                <li class="list-group-item"><b>City:</b> Constanta</li>
+                <li class="list-group-item"><b>Final grade:</b> 9.87</li>
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" style="margin: 0">
+                  Angular & .NET Practice
+                </h5>
+                <p class="lead" style="font-size: 16px; margin: 0">
+                  2022-2023 (6 months)
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <b>Specialization:</b> Web Development
+                </li>
+                <li class="list-group-item">
+                  <b>Company:</b> Cornerstone Technologies
+                </li>
+                <li class="list-group-item"><b>City:</b> Constanta</li>
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title" style="margin: 0">High School</h5>
+                <p class="lead" style="font-size: 16px; margin: 0">2017-2021</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <b>Specialization:</b> Mathematics and Computer Science
+                </li>
+                <li class="list-group-item">
+                  <b>Institution:</b> Liceul Teoretic "Carmen Sylva"
+                </li>
+                <li class="list-group-item">
+                  <b>City:</b> Eforie Sud, Constanta
+                </li>
+                <li class="list-group-item"><b>Final grade:</b> 9.01</li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center" style="gap: 24px">
+            <p class="lead" style="margin: 0">Languages spoken</p>
+            <div class="card" style="width: 18rem">
+              <div class="card-header">Romanian - native</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Listening: C2</li>
+                <li class="list-group-item">Reading: C2</li>
+                <li class="list-group-item">Writing: C2</li>
+                <li class="list-group-item">Spoken Production: C2</li>
+                <li class="list-group-item">Spoken Interaction: C2</li>
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem">
+              <div class="card-header">English - B2</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Listening: B2</li>
+                <li class="list-group-item">Reading: B2</li>
+                <li class="list-group-item">Writing: B2</li>
+                <li class="list-group-item">Spoken Production: B2</li>
+                <li class="list-group-item">Spoken Interaction: B2</li>
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem">
+              <div class="card-header">Spanish - B1</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Listening: B1</li>
+                <li class="list-group-item">Reading: B1</li>
+                <li class="list-group-item">Writing: B1</li>
+                <li class="list-group-item">Spoken Production: B1</li>
+                <li class="list-group-item">Spoken Interaction: B1</li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center" style="gap: 24px">
+            <p class="lead" style="margin: 0">Technologies</p>
+            <div
+              class="accordion accordion-flush"
+              id="accordionTechnologies"
+              style="width: 18rem"
+            >
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-MachineLearning">
                   <button
-                    onclick="handleHackathonItem(event)"
                     class="accordion-button collapsed"
-                    style="background-color: #f0f0f0"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
+                    data-bs-target="#flush-collapseMachineLearning"
                     aria-expanded="false"
-                    aria-controls="collapseTwo"
+                    aria-controls="flush-MachineLearning"
                   >
-                    Accordion Item #2
+                    Machine Learning
                   </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse">
+                <div
+                  id="flush-collapseMachineLearning"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-MachineLearning"
+                  data-bs-parent="#accordionTechnologies"
+                >
                   <div class="accordion-body">
-                    <div class="project-card">
-                      <img
-                        class="project-image mt-1"
-                        src=""
-                        alt="No photo available"
-                      />
-                      <div class="project-content d-flex flex-column">
-                        <div class="d-flex" style="gap: 16px">
-                          <p class="lead" style="margin: 0">
-                            <b>About the project</b>
-                          </p>
-                          <a class="d-none align-items-center" target="_blank">
-                            <span
-                              class="d-flex align-items-center badge bg-github"
-                              style="cursor: pointer"
-                              ><svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-github"
-                                viewBox="0 0 16 16"
-                              >
-                                <path
-                                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                                /></svg></span
-                          ></a>
-                          <a class="d-none align-items-center">
-                            <span
-                              class="d-flex align-items-center badge bg-primary"
-                              style="cursor: pointer"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-play-fill"
-                                viewBox="0 0 16 16"
-                              >
-                                <path
-                                  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-                                />
-                              </svg>
-                              Start
-                            </span>
-                          </a>
-                          <span
-                            class="d-none align-items-center badge bg-primary"
-                            style="cursor: pointer"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalCode"
-                            onclick="updateProjectCode(event)"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-code-slash"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
-                              />
-                            </svg>
-                            <span class="ms-1">See code</span>
-                          </span>
-                        </div>
-                        <div
-                          class="lead project-description d-flex flex-column mt-3"
-                        >
-                          Project description hereProject description
-                          hereProject description hereProject description
-                          hereProject description hereProject description
-                          hereProject description here
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li
-                            class="list-group-item d-flex flex-wrap technologies"
-                            style="padding: 0"
-                          >
-                            <span class="badge bg-primary">123</span>
-                            <span class="badge bg-primary">123</span>
-                            <span class="badge bg-primary">123</span>
-                          </li>
-                        </ul>
-                      </div>
+                    <div class="d-flex flex-column">
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        <b>Concepts</b>
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Transformers
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Natural Language Processing (NLP)
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Generative Adversial Network (GAN)
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Generative AI
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Artificial Neural Networks (ANN)
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Convolutional Neural Networks (CNN)
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Face recognition
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Gestures recognition
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Clustering
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        <b>Stacks</b>
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        PyTorch
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Transformers
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        TensorFlow
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Keras
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        MediaPipe
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        OpenCV
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Scikit-Learn
+                      </p>
+                      <p class="lead" style="font-size: 16px; margin: 0">
+                        Imblearn
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5 d-none hackathons">
-        <div class="col d-flex ms-5"><h1 class="display-6">Hackathons</h1></div>
-      </div>
-      <div class="row mt-3 d-none hackathons">
-        <div class="accordion">
-          <div
-            class="accordion-item mt-3 ms-5"
-            style="border: 1px solid #d8d8d8; border-radius: 5px"
-          >
-            <h2 class="accordion-header">
-              <button
-                onclick="handleHackathonItem(event)"
-                class="accordion-button collapsed"
-                style="background-color: #f0f0f0"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Accordion Item #2
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                <div class="card hackathon-card">
-                  <img src="" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <p class="lead"></p>
-                    <h5 class="card-title lead">About the project</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-WebDevelopment">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseWebDevelopment"
+                    aria-expanded="false"
+                    aria-controls="flush-WebDevelopment"
+                  >
+                    Web Development
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseWebDevelopment"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-WebDevelopment"
+                  data-bs-parent="#accordionTechnologies"
+                >
+                  <div class="accordion-body">
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      <b>Frontend</b>
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Angular
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Bootstrap
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      jQuery
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">AJAX</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Streamlit
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Web Sockets
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Chart JS
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Three JS
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      <b>Backend</b>
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      ASP.NET
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Entity Framework
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Dapper
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Django
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">Flask</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Postman
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Web Sockets
                     </p>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex flex-wrap technologies">
-                      <span class="badge"></span>
-                    </li>
-                    <li class="list-group-item">A second item</li>
-                  </ul>
-                  <div class="card-body d-flex flex-wrap technologies">
-                    <a href="#"
-                      ><button
-                        class="btn"
-                        style="color: #ffffff; background-color: #474747"
-                      >
-                        Github repository
-                      </button></a
-                    >
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-Databases">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseDatabases"
+                    aria-expanded="false"
+                    aria-controls="flush-Databases"
+                  >
+                    Databases
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseDatabases"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-Databases"
+                  data-bs-parent="#accordionTechnologies"
+                >
+                  <div class="accordion-body">
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      <b>SQL</b>
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      SQL Live Server
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      PostgreSQL
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Oracle
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">MySQL</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      <b>NoSQL</b>
+                    </p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      MongoDB
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-Containerization">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseContainerization"
+                    aria-expanded="false"
+                    aria-controls="flush-Containerization"
+                  >
+                    Containerization
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseContainerization"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-Containerization"
+                  data-bs-parent="#accordionTechnologies"
+                >
+                  <div class="accordion-body">
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Docker
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-VRAR">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseVRAR"
+                    aria-expanded="false"
+                    aria-controls="flush-VRAR"
+                  >
+                    Virtual and Augmented Reality
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseVRAR"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-VRAR"
+                  data-bs-parent="#accordionTechnologies"
+                >
+                  <div class="accordion-body">
+                    <p class="lead" style="font-size: 16px; margin: 0">GoDot</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">Three JS</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-Others">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOthers"
+                    aria-expanded="false"
+                    aria-controls="flush-Others"
+                  >
+                    Others
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOthers"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-Others"
+                  data-bs-parent="#accordionTechnologies"
+                >
+                  <div class="accordion-body">
+                    <p class="lead" style="font-size: 16px; margin: 0">C/C++</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">Java</p>
+                    <p class="lead" style="font-size: 16px; margin: 0">
+                      Arduino
+                    </p>
                   </div>
                 </div>
               </div>
@@ -623,11 +560,35 @@
           </div>
         </div>
       </div>
-      <div class="row mt-5 d-none cv">
-        <div class="col d-flex"><h1 class="display-6">CV</h1></div>
+      <div class="row w-100 mt-5" id="hackathonsPage" hidden>
+        <div
+          class="col w-100 d-flex flex-column align-items-center"
+          style="gap: 24px"
+          id="hackathonsArea"
+        >
+          <div class="card hackathon-card" id="hackathonCard" hidden>
+            <img class="card-img-top" />
+            <div class="card-body" style="padding-top: 0px">
+              <span class="badge mt-3"></span>
+              <h5 class="card-title mt-3"></h5>
+              <hr class="bg-secondary border-1" />
+              <div class="d-flex flex-wrap" style="gap: 12px">
+                <span class="badge" hidden></span>
+              </div>
+              <hr class="bg-secondary border-1" />
+              <p class="card-text"></p>
+              <p class="card-text mt-3">
+                <small class="text-muted"></small>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row mt-3 d-none cv">
-        <div class="col d-flex" style="gap: 24px">
+      <div class="row w-100 mt-5" id="cvPage" hidden>
+        <div
+          class="col w-100 d-flex flex-column align-items-center"
+          style="padding-right: 0; gap: 24px"
+        >
           <div
             class="btn-group"
             role="group"
@@ -658,13 +619,9 @@
               >English</label
             >
           </div>
-        </div>
-      </div>
-      <div class="row mt-3 d-none cv">
-        <div class="col d-flex">
           <embed
             id="cvro"
-            src="assets/CV.pdf"
+            src="assets/CV_RO.pdf"
             type="application/pdf"
             width="100%"
             height="800"
@@ -679,63 +636,184 @@
           />
         </div>
       </div>
-      <div class="row mt-5 d-none contact">
-        <div class="col d-flex ms-5"><h1 class="display-6">Contact</h1></div>
-      </div>
-      <div class="row mt-3 d-none contact">
-        <div class="col d-flex flex-column flex-wrap ms-5" style="gap: 24px">
-          <div class="d-flex align-items-center" style="gap: 12px">
+      <div class="row mt-5"></div>
+    </div>
+    <div class="container-fluid w-100" id="projectArea" hidden>
+      <div class="row w-100 mt-3">
+        <div class="col">
+          <div
+            class="d-flex align-items-center"
+            style="cursor: pointer"
+            onclick="backToPortfolio()"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="16"
+              height="16"
               fill="currentColor"
-              class="bi bi-envelope"
+              class="bi bi-chevron-left"
               viewBox="0 0 16 16"
             >
               <path
-                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
               />
             </svg>
-            constantinescu.mario_06_05@yahoo.com
-          </div>
-          <div class="d-flex align-items-center" style="gap: 12px">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              class="bi bi-telephone"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
-              />
-            </svg>
-            +4072665059
-          </div>
-          <div class="d-flex align-items-center" style="gap: 12px">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              class="bi bi-linkedin"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-              />
-            </svg>
-            <a
-              href="https://www.linkedin.com/in/mario-cristian-constantinescu-a97475245/"
-              style="text-decoration: none"
-              >See profile</a
-            >
+            <p class="lead ms-1" style="margin-bottom: 0">Back to portfolio</p>
           </div>
         </div>
       </div>
+      <div class="row w-100 mt-3">
+        <div class="col d-flex justify-content-center w-100">
+          <p class="lead" id="projectTitle">
+            Large Language Model (LLM) from scratch
+          </p>
+        </div>
+      </div>
+      <div class="row w-100">
+        <div
+          class="col d-flex justify-content-center flex-wrap w-100"
+          style="gap: 12px"
+          id="projectTechnologies"
+        >
+          <span class="badge"></span>
+        </div>
+        <hr class="bg-danger border-2 border-top border-secondary mt-3 ms-3" />
+      </div>
+      <div class="row w-100">
+        <div class="col d-flex flex-column align-items-center w-100">
+          <p class="lead">Description</p>
+          <div class="card w-75">
+            <div class="card-body" id="projectDescription"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row w-100 mt-3" id="projectImagesArea" hidden>
+        <div class="col d-flex flex-column align-items-center w-100">
+          <p class="lead">Images</p>
+          <div
+            class="d-flex ms-3"
+            style="gap: 24px; overflow-x: auto"
+            id="projectImages"
+          >
+            <img
+              src="projects/boids-algorithm.png"
+              class="img-thumbnail rounded"
+              width="300"
+              style="cursor: pointer"
+              data-bs-toggle="modal"
+              data-bs-target="#projectImageModal"
+              onclick="$('#projectZoomImage').attr('src', $(this).attr('src'))"
+              hidden
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row w-100 mt-5">
+        <div
+          class="col d-flex flex-wrap justify-content-center align-items-center w-100"
+          style="gap: 12px"
+          id="projectImplementationArea"
+        >
+          <p class="lead" style="margin: 0">Implementation</p>
+          <a id="projectGithub" target="_blank">
+            <span
+              class="d-flex align-items-center badge bg-github"
+              style="cursor: pointer"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-github"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                />
+              </svg>
+            </span>
+          </a>
+          <span
+            class="d-flex align-items-center badge bg-primary"
+            style="cursor: pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#modalCode"
+            onclick="updateProjectCode(event)"
+            id="projectCode"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-code-slash"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+              />
+            </svg>
+            <span class="ms-1">See code</span>
+          </span>
+          <a id="projectExternal" target="_blank">
+            <span
+              class="d-flex align-items-center badge bg-primary"
+              style="cursor: pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-play-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                />
+              </svg>
+              See project
+            </span>
+          </a>
+        </div>
+      </div>
       <div class="row mt-5"></div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="projectImageModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Image</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img src="" width="100%" id="projectZoomImage" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div
@@ -770,7 +848,7 @@
               id="codeFontSizeRange"
               oninput="changeCodeFontSize(event)"
             />
-            <pre><code id="projectCode" class="python project-code">
+            <pre><code id="modalProjectCode" class="python project-code">
 
             </code></pre>
           </div>
@@ -891,7 +969,7 @@
 
       class LogisticRegression:
         def __init__(self, learning_rate=0.01, max_iterations=100000, tol=0, epsilon=1e-09):
-            self.learning_rate = 0.01
+            self.learning_rate = learning_rate
             self.max_iterations = max_iterations
             self.tol = tol
             self.epsilon = epsilon
@@ -2796,7 +2874,11 @@
       </div>
       <div class="toast-body">
         +40729665059
-        <span class="text-primary" style="cursor: pointer" onclick="copyToClipboard(event, '+40729665059')">
+        <span
+          class="text-primary"
+          style="cursor: pointer"
+          onclick="copyToClipboard('+40729665059')"
+        >
           Copy
         </span>
       </div>
@@ -2833,7 +2915,11 @@
       </div>
       <div class="toast-body">
         constantinescu.mario_06_05@yahoo.com
-        <span class="text-primary" style="cursor: pointer" onclick="copyToClipboard(event, 'constantinescu.mario_06_05@yahoo.com')">
+        <span
+          class="text-primary"
+          style="cursor: pointer"
+          onclick="copyToClipboard('constantinescu.mario_06_05@yahoo.com')"
+        >
           Copy
         </span>
       </div>

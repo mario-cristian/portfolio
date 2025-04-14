@@ -1,56 +1,18 @@
-.button {
-  width: 120px;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.categories-area {
+  width: 100%;
 }
 
-.button > svg {
-  display: none;
-}
-
-.active-button {
-  background-color: #4395ff;
-  color: white;
-}
-
-.active-button > svg {
-  display: block;
-}
-
-.button,
-.active-button {
-  transition-duration: 0.3s;
-}
-
-.technologies {
-  gap: 12px;
-}
-
-.hackathon-card {
-  width: 50%;
+.category-projects-area {
+  gap: 24px;
 }
 
 .project-card {
-  display: flex;
+  cursor: pointer;
 }
 
-.project-content {
-  margin-left: 1rem;
-  margin-top: 0.25rem;
-}
-
-.project-image {
-  width: 350px;
-  min-width: 350px;
-  height: 200px;
-}
-
-.project-description {
-  font-size: 16px !important;
+.project-card:hover {
+  transform: scale(1.03);
+  transition-duration: 0.3s;
 }
 
 .bg-github {
@@ -58,39 +20,33 @@
   color: white !important;
 }
 
-.project-code {
-  font-size: 16px;
+.c-pointer {
+  cursor: pointer;
 }
 
-.toast {
-  transition-duration: 0.5s;
+.c-pointer:hover {
+  transform: scale(1.03);
+  transition-duration: 0.3s;
 }
 
-@media screen and (max-width: 900px) {
-  .ms-5 {
-    margin-left: 0 !important;
+.header {
+  justify-content: space-between;
+}
+
+.hackathon-card {
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    justify-content: center;
   }
 
   .hackathon-card {
     width: 100%;
   }
 
-  .project-card {
-    flex-direction: column;
-  }
-
-  .project-image {
-    width: 100%;
-    min-width: 0;
-    height: auto;
-  }
-
-  .project-content {
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-
-  .project-code {
-    font-size: 12px;
+  .container-fluid {
+    padding-right: 0px !important;
   }
 }

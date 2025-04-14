@@ -1,75 +1,4 @@
-var marginLeftElements = [];
-var itemEnabledColor = "#FFFFFF";
-var itemDisabledColor = "#F0F0F0";
-var phoneToast, emailToast;
-
-function switchOption(event) {
-  let target = $(event.target);
-
-  if (!target.hasClass("active-button")) {
-    let element = $(".active-button");
-
-    if (element.length > 0) {
-      let oldTarget = $(element[0]);
-
-      oldTarget.removeClass("active-button");
-      hideOption(oldTarget[0].outerText);
-    }
-
-    target.addClass("active-button");
-    showOption(target[0].outerText);
-  } else {
-    target.removeClass("active-button");
-    hideOption(target[0].outerText);
-  }
-}
-
-function showOption(optionName) {
-  optionName = optionName.replace(" ", "-");
-
-  let targets = $("." + optionName.toLowerCase());
-
-  for (let i = 0; i < targets.length; i++) $(targets[i]).removeClass("d-none");
-}
-
-function hideOption(optionName) {
-  optionName = optionName.replace(" ", "-");
-
-  let targets = $("." + optionName.toLowerCase());
-
-  for (let i = 0; i < targets.length; i++) $(targets[i]).addClass("d-none");
-}
-
-function handleHackathonItem(event) {
-  let target = $(event.target);
-
-  if (target[0].localName === "span") {
-    target = target.parent();
-  }
-
-  if (target.css("background-color") === "rgb(240, 240, 240)")
-    target.css("background-color", itemEnabledColor);
-  else target.css("background-color", itemDisabledColor);
-}
-
-function addMarginLeft() {
-  for (let i = 0; i < marginLeftElements.length; i++)
-    $(marginLeftElements[i]).addClass("ms-5");
-}
-
-function removeMarginLeft() {
-  if (marginLeftElements.length == 0) marginLeftElements = $(".ms-5");
-
-  for (let i = 0; i < marginLeftElements.length; i++)
-    $(marginLeftElements[i]).removeClass("ms-5");
-}
-
-function handleMarginLeft() {
-  let windowWidth = $(window).width();
-
-  if (windowWidth < 900) removeMarginLeft();
-  else addMarginLeft();
-}
+var selectedTab, projectsTab, educationTab, hackathonsTab, CVTab;
 
 function initToasts() {
   phoneToast = new bootstrap.Toast($("#phoneToast")[0]);
@@ -157,22 +86,36 @@ function showEmail() {
   });
 }
 
-function copyToClipboard(event, text) {
+function copyToClipboard(text) {
   navigator.clipboard.writeText(text);
-  console.log(event);
+}
+
+function initMainPage() {
+  projectsTab = $("#projectsTab");
+  educationTab = $("#educationTab");
+  hackathonsTab = $("#hackathonsTab");
+  CVTab = $("#CVTab");
+
+  selectedTab = projectsTab;
+}
+
+function changePage(event) {
+  let target = $(event.target);
+  if (!target.hasClass("c-pointer")) return;
+
+  selectedTab.removeClass("fw-bold");
+  selectedTab.addClass("c-pointer");
+  target.removeClass("c-pointer");
+  target.addClass("fw-bold");
+
+  $("#" + selectedTab.text().trim().toLowerCase() + "Page").attr("hidden", true);
+  $("#" + target.text().trim().toLowerCase() + "Page").attr("hidden", false);
+
+  selectedTab = target;
 }
 
 $(document).ready(function () {
+  initMainPage();
   displayProjects();
-  displayHackathons();
-  handleMarginLeft();
   initToasts();
-
-  $("#projectsWrapper").children().eq(0).removeClass("collapsed");
-  $("#projectsWrapper").children().eq(0).trigger("click");
-  $("#naturallanguageprocessingProjects").children().eq(0).children().eq(1).children().eq(0).children().eq(0).trigger("click");
-});
-
-$(window).on("resize", function () {
-  handleMarginLeft();
 });
