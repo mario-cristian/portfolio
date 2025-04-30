@@ -265,6 +265,16 @@ const projects = [
     null
   ),
   new Project(
+    "CycleGAN from scratch",
+    "Machine Learning",
+    [getCategory("PyTorch")],
+    "Key features <ul><li><b>Critic model</b> - tries to detect if an image is real or fake</li><li><b>Generator model</b> - generates a fake image from a real one or remakes the fake one back to the original photo</li><li>Residual blocks</li><li>Instance Normalization</li><li>Adversial loss</li><li><b>Cycle loss</b> - the difference between the original photo and the photo remade from the fake one back to the original</li><li><b>Identity loss</b> - not generating anything if the model is given an image that it is supposed to generate</li><li>FP16 training</li><li><b>Batch size:</b> 1</li><li><b>Epochs:</b> 200</li></ul>Dataset from Kaggle: <a href='https://www.kaggle.com/datasets/suyashdamle/cyclegan' target='_blank'>link</a><br>Sources I learned / got inspired from: <ul><li><a href='https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html' target='_blank'>Cycle GAN Paper</a></li><li><a href='https://www.youtube.com/watch?v=4LktBHGCNfw&list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va&index=9' target='_blank'>Youtube video</a></li></ul>",
+    null,
+    null,
+    null,
+    ["projects/CycleGAN1.png", "projects/CycleGAN2.png", "projects/CycleGAN3.png", "projects/CycleGAN4.png", "projects/CycleGAN5.png"]
+  ),
+  new Project(
     "Physics simulations controlled by hand gestures using web camera",
     "Bachelor Graduation Project",
     [
